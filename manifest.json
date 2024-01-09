@@ -1,47 +1,17 @@
 {
-  "name": "Exsy",
+  "manifest_version": 3,
+  "name": "Printify Transactions Count",
+  "description": "Get printify transactions totals",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "action": {
+    "default_popup": "popup/main.html",
+    "default_icon": "images/printify.png"
+  },
+  "host_permissions": [
+    "https://printify.com/*"
+  ],
   "permissions": [
     "activeTab",
-    "tabs",
-    "declarativeContent",
-    "storage",
-    "debugger"
-  ],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-  "page_action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "images/get_started16.png",
-      "32": "images/get_started32.png",
-      "48": "images/get_started48.png",
-      "128": "images/get_started128.png"
-    }
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://www.etsy.com/your/orders/*"],
-      "css": ["content.css"],
-      "run_at": "document_idle",
-      "js": ["etsyscript.js"]
-    },
-    {
-      "matches": ["https://www.customhappy.com/*","https://printedmint.com/*"],
-      "css": ["content.css"],
-      "run_at": "document_idle",
-      "js": ["chscript.js"]
-    }
-  ],
-  "web_accessible_resources": ["images/copy.svg", "images/paste.svg"],
-  "icons": {
-    "16": "images/get_started16.png",
-    "32": "images/get_started32.png",
-    "48": "images/get_started48.png",
-    "128": "images/get_started128.png"
-  },
-  "manifest_version": 2
+    "scripting"
+  ]
 }
